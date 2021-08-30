@@ -1,0 +1,41 @@
+h2 span a{
+	font-size: 0.9em!important;
+	text-decoration: none;
+	color: inherit;
+}
+ul.cadre{
+	list-style: none;
+}
+ul.cadre li{
+	text-align: center;
+	background-color:#FFFFFF;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border:1px solid #DDDDDD;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+  display:inline-block;
+  padding:10px;
+  margin:20px;
+  min-width:200px;
+}
+ul.cadre li span{
+	display: block;
+	height:20px;
+	width:auto;
+	font-size: 18px!important;
+	margin:5px;
+}
+ul.cadre li a{
+	display:block;
+	text-decoration: none;
+	color:inherit;
+}
+.thumb{
+	max-height: 120px;
+}
+form#signup{
+	margin:0!important;
+}

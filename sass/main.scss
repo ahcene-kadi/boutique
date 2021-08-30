@@ -1,0 +1,594 @@
+@import 'compass';
+/* ---------------------------------------------------- */
+/*		Général
+/* ---------------------------------------------------- */
+.container{
+	width:960px;
+	margin:0 auto;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+
+.message{
+	color:green;
+	padding:5px 10px;
+	font-style: italic;
+	margin:20px;
+	border:1px solid #DDD;
+}
+.error{
+  color:red;
+  font-size: 0.9em;
+  font-style: italic;
+}
+h1{
+	color:#444;
+	font-size:2em;
+	@include text-shadow(1px 1px 1px #FFF);
+	border-bottom: 1px solid #ddd;
+}
+h2{
+	color:#444;
+	font-size:1.7em;
+	@include text-shadow(1px 1px 1px #FFF);
+	border-bottom: 1px solid #ddd;
+	position:relative;
+}
+p{
+	font-size: 0.9em;
+	color:#444;
+	font-style: italic;
+}
+button{
+	border:none;
+	background: #ddd;
+	margin:10px;
+	@include box-shadow(0 1px 3px #999);
+	a{
+		color:#444!important;
+		font-size:.8em;
+		@include text-shadow(1px 1px 1px #FFF);
+		text-decoration: none;
+		display:block;
+		padding:5px;
+		&:hover{
+			color:#f2871c!important;
+		}
+	}
+}
+button.commande{
+	background-color:#f2871c;
+	a{
+		color:#FFF!important;
+		@include text-shadow(1px 1px 1px #999);
+	&:hover{
+		color:#444!important;
+		@include text-shadow(1px 1px 1px #FFF);
+		}
+	} 
+}
+body{
+	background-color:#EEE;
+}
+.required:after{
+	color:red;
+	content:'*';
+}
+.information{
+	font-size: .7em;
+	color:#444;
+}
+/* ---------------------------------------------------- */
+/*		Top header
+/* ---------------------------------------------------- */
+#topheader
+{
+	background-color:#ddd;
+	height:20px;
+	ul{
+		margin:0;
+		float:right;
+
+		li{
+			background-color: #f2871c;
+			list-style: none;
+			float:left;
+			border-right:1px solid #FFF;
+			a{
+				display: block;
+				color:#FFF;
+				font-size: 0.8em;
+				padding:3px 10px;
+				text-decoration: none;
+			}
+		&:first-child{ @include border-radius(0 0 0 5px);}
+		&:last-child{ @include border-radius(0 0 5px 0);border:none;}
+		&:hover{
+				a{
+					color:#444;
+				}
+			}
+		}
+	}
+}
+/* ---------------------------------------------------- */
+/*		Header
+/* ---------------------------------------------------- */
+header{
+	background-color:#ddd;
+
+	#header{
+		min-height:100px;
+		position: relative;
+		background: transparent url(../img/logo.png) left center no-repeat;
+		.panier{
+			position:absolute;
+			right:20px;
+			bottom: 10px;
+			height:50px;
+			background: url(../img/panier.png) left center no-repeat;
+			a{
+				color:#444;
+				text-decoration: none;
+				font-size:.8em;
+				@include text-shadow(1px 1px 1px #FFF);
+				padding-left:40px;
+				line-height: 32px;
+			}
+			a:hover{
+				text-decoration: underline;
+				color:#f2871c;
+			}
+			span{
+				display: block;
+				font-size:.8em;
+				text-align: right;
+				color:#f2871c;
+			}
+		}
+	}
+}
+/* ---------------------------------------------------- */
+/*		Menu
+/* ---------------------------------------------------- */
+nav{
+	background: #DDD;
+	@include box-shadow(0 1px 3px #999);
+	height:30px;
+	ul{
+		li{
+			display:inline-block;
+			margin:0 10px;
+			color:#444;
+			a{
+				color:#444!important;
+				text-decoration: none;
+				font-size:.9em;
+				display:block;
+				padding:5px 10px;
+				@include text-shadow(1px 1px 1px #FFF);
+			&:hover{
+					background: #444;
+					color:#FFF!important;
+					@include text-shadow(1px 1px 1px #000);
+				}
+			}
+			li{
+				display:none;
+			}
+
+		}
+	}
+}
+
+/* ---------------------------------------------------- */
+/*		la liste des produits
+/* ---------------------------------------------------- */
+.main{
+	.produits{
+		list-style: none;
+		margin:20px auto;
+		padding:0;
+		li{
+			display:inline-block;
+			position:relative;
+			width:167px;
+			height:220px;
+			margin:9px;
+			background: #FFF;
+			border:1px solid #DDD;
+			@include box-shadow(0 1px 3px #999);
+			a{
+				text-decoration: none;
+				color:#666;
+			}
+			img{
+				border:0px;
+				height:167px;
+			}
+			h4{
+				margin:0;
+				text-transform: uppercase;
+				padding:0 5px;
+				font-size: .9em;
+			}
+			div.prix{
+				position:absolute;
+				bottom: 0px;
+				right:0;
+				display:block;
+				width:107px;
+				height:28px;
+				background: #DDD;
+				text-align: right;
+				color:#444;
+				@include text-shadow(1px 1px 1px #FFF);
+				padding-right: 10px;
+				line-height: 28px;
+				border-left:1px solid #DDD;
+			}
+			span{
+				position:absolute;
+				bottom: 0;
+				left:0;
+				display:block;
+				width:48px;
+				height:28px;
+				background: #DDD;
+				text-align: center;
+				border-right:1px solid #CCC;
+				@include text-shadow(1px 1px 1px #FFF);
+				a{
+					display:block;
+				&:hover{
+					color:#f2871c;
+				}
+				}
+			}
+		&:hover{
+			@include box-shadow(0 1px 3px #000);
+			}
+		}
+	}
+
+
+	.col{
+		width:348px;
+		border:1px solid #ddd;
+		margin:10px;
+		background: #FFF;
+		padding:10px;
+		padding-left:100px;
+
+	}
+	.livraison{
+			background: #FFF url(../img/produits/livraison.png) 10px 10px no-repeat;
+		}
+	.charte{
+			background: #FFF url(../img/produits/charte.png) 10px 10px no-repeat;
+		}
+}
+/* ---------------------------------------------------- */
+/*		informations produit
+/* ---------------------------------------------------- */
+.main ul.produit{
+	list-style: none;
+	margin:20px auto;
+	padding:0;
+	margin-bottom:40px;
+	li{
+		float:left;
+
+	&.visuel{
+		width:320px;
+		height:320px;
+		background: #FFF;
+		border:1px solid #DDD;
+		@include box-shadow(0 1px 3px #999);
+		text-align: center;
+
+		}
+	&.infos{
+		width:560px;
+		padding:0 20px;
+		
+		}
+	}
+}
+.main form#produit{
+	label{
+		font-size: 0.8em;
+		font-weight: bold;
+	}
+	input[type="text"]{
+		width: 30px;
+		display:block;
+		margin-bottom: 20px;
+	}
+	input[type="submit"]{
+		border:none;
+		@include box-shadow(0 1px 3px #999);
+		font-size:.8em;
+		@include text-shadow(1px 1px 1px #999);
+		text-decoration: none;
+		padding:5px 10px;
+		padding-left:40px;
+		background:#f2871c url(../img/panierblanc.png) 5px center no-repeat;
+		color:#FFF!important;
+		&:hover{
+			color:#444!important;
+			@include text-shadow(1px 1px 1px #FFF);
+		}
+	}
+
+}
+/* ---------------------------------------------------- */
+/*		Fomulaire filtre
+/* ---------------------------------------------------- */
+#filtre{
+	position:absolute;
+	top:-5px;
+	right:10px;
+	input[type="submit"]{
+		border:none;
+		background: #ddd;
+		@include box-shadow(0 1px 3px #999);
+		color:#444!important;
+		font-size:.6em;
+		@include text-shadow(1px 1px 1px #FFF);
+		text-decoration: none;
+		padding:4px 5px;
+		&:hover{
+			color:#f2871c!important;
+		}
+	}
+	select{
+		display:inline-block;	
+		border: 1px solid #DDD; 
+	    @include box-shadow(0 1px 3px #999);
+	    font-size:0.6em;
+	    width:200px;
+	    height:30px;
+	    outline:none;
+	}
+}
+/* ---------------------------------------------------- */
+/*		le panier
+/* ---------------------------------------------------- */
+table{
+	width:100%;
+	thead{
+		th{
+			height:30px;
+			background: #444;
+			color:#FFF;
+			font-size: .8em;
+			font-weight: normal;
+			width:10%;
+			border-right:1px solid #CCC;
+			&:first-child,&:last-child{
+				border:none;
+			}
+			&.text{
+				width:40%;
+			}	
+		}
+	}
+	tbody{
+
+		td{
+			text-align: center;
+			line-height: 50px;
+			border-bottom: 1px dotted #999;
+			img{
+				height:60px;
+				margin:10px;
+				border:1px solid #DDD;
+			}
+			&.text{
+				text-align:left!important;
+				a{
+					background:none;
+					width: 100%;
+					color:#444;
+					text-decoration: none;
+					padding:0;
+				&:hover{
+						text-decoration: underline;
+						color:#f2871c;
+					}
+				}
+			}
+			a{
+				display:inline-block;
+				width:16px;
+				height:16px;
+				margin:0 10px;
+				background: url(../img/sprite.png) 0 0 no-repeat;
+			}
+			
+		}
+
+	}
+}
+.edit{
+	background-position: -16px 0px;
+}
+.delete{
+	background-position: 0 0;
+}
+.edit:hover{
+	background-position: -16px -16px;
+}
+.delete:hover{
+	background-position: 0 -16px;
+}
+.plus{
+	background-position: -32px 0px;
+}
+.moins{
+	background-position: -48px 0px;
+}
+.plus:hover{
+	background-position: -32px -16px;
+}
+.moins:hover{
+	background-position: -48px -16px;
+}
+.total{
+	width:350px;
+	float:right;
+	margin-bottom: 40px;
+	p{
+		position:relative;
+		border-bottom: 1px solid #DDD;
+		line-height: 40px;
+		em{
+			position:absolute;
+			top:0;
+			right:0;
+		}
+	}
+}
+
+/* ---------------------------------------------------- */
+/*		Login
+/* ---------------------------------------------------- */
+#login{
+	width:300px;
+	margin:100px auto;
+	background-color: #FFF;
+	padding:0 50px 50px;
+	border:1px solid #DDD;
+	@include border-radius(3px)
+}
+/* ---------------------------------------------------- */
+/*		Signup
+/* ---------------------------------------------------- */
+#signup{
+	width:600px;
+	margin:100px auto;
+	background-color: #FFF;
+	padding:0 50px 50px;
+	border:1px solid #DDD;
+	@include border-radius(3px)
+}
+
+/* ---------------------------------------------------- */
+/*		Page contact
+/* ---------------------------------------------------- */
+form{
+	margin:20px;
+	label{
+		display:block;
+		font-weight: bold;
+	}
+	input[type='text'],input[type='email'],input[type='password']{
+		height:25px;
+		width:250px;
+		outline:none;
+		color:#999;
+		border:1px solid #DDD;
+		@include border-radius(3px)
+	}
+	textarea{
+		width:80%;
+		height:250px;
+		outline:none;
+		color:#999;
+		border:1px solid #DDD;
+		@include border-radius(3px)
+	}
+	input[type='submit']{
+		border:none;
+		background: #ddd;
+		@include box-shadow(0 1px 3px #999);
+		color:#444!important;
+		font-size:.8em;
+		@include text-shadow(1px 1px 1px #FFF);
+		text-decoration: none;
+		padding:5px 10px;
+		&:hover{
+			color:#f2871c!important;
+		}
+	}
+	fieldset{
+		width:278px;
+		float: left;
+		margin:0 10px;
+	}
+}
+/* ---------------------------------------------------- */
+/*		Paypal
+/* ---------------------------------------------------- */
+#paypal input[type='submit']{
+	border:none;
+	background: #f2871c;
+	margin:10px;
+	@include box-shadow(0 1px 3px #999);
+	color:#fff!important;
+	font-size:.8em;
+	@include text-shadow(1px 1px 1px #999);
+	text-decoration: none;
+	padding:8px 20px;
+	float:right;
+	&:hover{
+			color:#444!important;
+			@include text-shadow(1px 1px 1px #FFF);
+	}
+}
+
+
+/* ---------------------------------------------------- */
+/*		Pagination
+/* ---------------------------------------------------- */
+.pagination{
+	text-align: right;
+	ul{
+		margin:20px auto;
+		margin-right: 20px;
+		list-style: none;
+		padding:0;
+		li{
+			display:inline-block;
+			width:25px;
+			height:25px;
+			border:1px solid #ddd;
+			text-align: center;
+			@include box-shadow(0 1px 3px #999);
+			a{
+				display: block;
+				text-decoration: none;
+				line-height: 25px;
+				color:#444!important;
+				font-size:.8em;
+				@include text-shadow(1px 1px 1px #FFF);
+				&:hover{
+					color:#f2871c!important;
+				}
+			}
+			&.active{
+				a{
+					color:#f2871c!important;
+				}
+			}
+		}
+	}
+}
+/* ---------------------------------------------------- */
+/*		Footer
+/* ---------------------------------------------------- */
+footer{
+	background-color:#ddd;
+	height:40px;
+	p{
+		font-size:.7em;
+		line-height: 40px;
+		text-align: center;
+		@include text-shadow(1px 1px 1px #FFF);
+	}
+}
